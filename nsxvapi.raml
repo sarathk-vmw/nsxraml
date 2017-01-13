@@ -1039,7 +1039,7 @@ securitySchemes:
             </controllerCredential>
           schema: nsxControllerPasswordUpdate
 /2.0/services/application/scope/{scopeId}:
-  displayName: servicesScope
+  displayName: servicesScopeGet
   description: Working with services on a scope
   uriParameters:
     scopeId:
@@ -1051,6 +1051,16 @@ securitySchemes:
   get:
     displayName: servicesScopeRead
     description: List services that have been created on the scope
+/2.0/services/application/{scopeId}:
+  displayName: servicesScope
+  description: Working with services on a scope
+  uriParameters:
+    scopeId:
+      required: true
+      displayName: scopeId
+      description: |
+        Can be "globalroot-0", "universalroot-0" or datacenterId in upgrade use
+        cases.
   post:
     displayName: servicesScopeCreate
     description: Create a new service on the specified scope
